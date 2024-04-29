@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'groovy'
+}
+
+group = 'com.joeyzhao.demo'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.spockframework:spock-core:2.4-M4-groovy-4.0'
+    testImplementation 'org.apache.groovy:groovy-all:4.0.21'
+    testImplementation 'org.testcontainers:testcontainers:1.19.7'
+    testImplementation 'org.testcontainers:localstack:1.19.7'
+    testImplementation 'software.amazon.awssdk:sns:2.25.40'
+    testImplementation 'software.amazon.awssdk:sqs:2.25.40'
+    testImplementation group: 'com.amazonaws', name: 'aws-java-sdk-sns', version: '1.12.710'
+    testImplementation group: 'com.amazonaws', name: 'aws-java-sdk-sqs', version: '1.12.710'
+
+}
+
+test {
+    useJUnitPlatform()
+}
